@@ -12,6 +12,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 import App from './App'
 
+// 引入公共css
+import '../static/css/ckeditor.css'
+import '../static/css/index.css'
 // 安装路由
 Vue.use(VueRouter);
 
