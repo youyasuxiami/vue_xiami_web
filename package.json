@@ -5,11 +5,12 @@
   "author": "xiami <891627097@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
-    "build": "node build/build.js"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build && vue-cli-service build --mode test",
+    "test": "vue-cli-service build --mode test"
   },
   "dependencies": {
+    "core-js": "^3.6.5",
     "axios": "^0.19.2",
     "element-ui": "^2.13.2",
     "vue": "^2.5.2",
@@ -52,7 +53,9 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0"
   },
   "engines": {
     "node": ">= 6.0.0",
