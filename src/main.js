@@ -13,6 +13,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 
 // 引入公共css
+import "@/assets/iconfont/iconfont.css"
 import '../public/css/ckeditor.css'
 import '../public/css/index.css'
 // 安装路由
