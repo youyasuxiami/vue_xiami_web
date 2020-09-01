@@ -24,38 +24,39 @@
     <div class="blogsbox">
       <div
         v-for="item in newBlogData"
-        :key="item.uid"
+        :key="item.id"
         class="blogs"
         data-scroll-reveal="enter bottom over 1s"
       >
         <h3 class="blogtitle">
-          <a href="javascript:void(0);" @click="goToInfo(item.uid)">{{item.title}}</a>
+          <a href="javascript:void(0);" @click="goToInfo(item.id)">{{item.title}}</a>
         </h3>
 
         <span class="blogpic">
-          <a href="javascript:void(0);" @click="goToInfo(item.uid)" title>
-            <img v-if="item.photoList" :src="PICTURE_HOST + item.photoList[0]" alt>
+          <a href="javascript:void(0);" @click="goToInfo(item.id)" title>
+            <img  :src="item.firstPicture" alt>
           </a>
         </span>
 
-        <p class="blogtext">{{item.summary}}</p>
+        <p class="blogtext">{{item.description}}</p>
         <div class="bloginfo">
           <ul>
 
             <li class="author">
               <span class="iconfont">&#xe60f;</span>
-              <a href="javascript:void(0);" @click="goToAuthor(item.author)">{{item.author}}</a>
+              <a href="javascript:void(0);" @click="goToAuthor(item.userId)">{{item.userId}}</a>
             </li>
-            <li class="lmname" v-if="item.blogSort">
+<!--            <li class="lmname" v-if="item.blogSort">-->
+            <li class="lmname">
               <span class="iconfont">&#xe603;</span>
               <a
                 href="javascript:void(0);"
-                @click="goToList(item.blogSort.uid)"
-              >{{item.blogSort.sortName}}</a>
+                @click="goToList(item.id)"
+              >{{item.description}}</a>
             </li>
             <li class="view">
               <span class="iconfont">&#xe8c7;</span>
-              <span>{{item.clickCount}}</span>
+              <span>{{item.views}}</span>
             </li>
             <li class="like">
               <span class="iconfont">&#xe663;</span>
@@ -91,6 +92,8 @@
 <script>
   import FirstRecommend from "../components/FirstRecommend";
   import {getNewBlog} from "../api/index";
+  import { Loading } from "element-ui";
+
 
   export default {
     components: {
@@ -104,6 +107,8 @@
         currentPage: 1,
         pageSize: 15,
         total: 0, //总数量
+        isEnd: false, //是否到底底部了
+        loadingInstance: null, // loading对象
       }
     },
     mounted() {
@@ -111,10 +116,9 @@
       var that = this;
       that.loading = false;
     },
-    // created() {
-    //   this.newBlogList();
-    //
-    // },
+    created() {
+      this.newBlogList();
+    },
     methods: {
       //跳转到文章详情
       goToInfo(uid) {
@@ -131,22 +135,46 @@
           text: '正在努力加载中……',
           background: 'rgba(0, 0, 0, 0.7)'
         })
-
         const params = new URLSearchParams();
         params.append("currentPage", this.currentPage);
         params.append("pageSize", this.pageSize);
         getNewBlog(params).then(response => {
-          if (response.code == "success") {
-            this.newBlogData = response.data.records;
+          if (response.code == "20000") {
+            this.newBlogData = response.data.data;
             this.total = response.data.total;
-            this.pageSize = response.data.size;
-            this.currentPage = response.data.current;
+            // this.pageSize = response.data.size;
+            // this.currentPage = response.data.current;
           }
           this.loadingInstance.close();
-        },function(err){
-          this.loadingInstance.close();
+        });
+      },
+      loadContent: function () {
+        var that = this;
+        that.loading = false;
+        that.currentPage = that.currentPage + 1;
+        var params = new URLSearchParams();
+        params.append("currentPage", that.currentPage);
+        params.append("pageSize", that.pageSize);
+        getNewBlog(params).then(response => {
+          if (response.code == "20000" && response.data.data.length > 0) {
+            that.isEnd = false;
+            var newData = that.newBlogData.concat(response.data.data);
+            that.newBlogData = newData;
+            that.total = response.data.total;
+            that.pageSize = response.data.size;
+            that.currentPage = response.data.current;
+
+            //全部加载完毕
+            if (newData.length < that.pageSize) {
+              that.isEnd = true;
+            }
+          } else {
+            that.isEnd = true;
+          }
+          that.loading = false;
         });
       }
+
     }
   }
 </script>
