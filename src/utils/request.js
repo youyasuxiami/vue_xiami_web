@@ -41,8 +41,6 @@ service.interceptors.response.use(
      * You can also judge the status by HTTP Status Code
      */
     response => {
-        console.log('response--------------')
-        console.log(response)
         const res = response.data
 
         // if the custom code is not 20000, it is judged as an error.
@@ -57,21 +55,22 @@ service.interceptors.response.use(
             if (document.getElementsByClassName('el-message').length === 0) {
 
                 // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
-                if (res.code === 401) {
-                    // if (document.getElementsByClassName('el-message').length === 0) {
-                    // to re-login
-                    MessageBox.confirm('登录信息已过期，需要重新登录', 'Confirm logout', {
-                        confirmButtonText: '重新登录',
-                        cancelButtonText: '取消',
-                        type: 'warning'
-                    }).then(() => {
-                        store.dispatch('user/resetToken').then(() => {
-                            location.reload()
-                        })
-                    })
-                }
+                // if (res.code === 401) {
+                //     // if (document.getElementsByClassName('el-message').length === 0) {
+                //     // to re-login
+                //     MessageBox.confirm('登录信息已过期，需要重新登录', 'Confirm logout', {
+                //         confirmButtonText: '重新登录',
+                //         cancelButtonText: '取消',
+                //         type: 'warning'
+                //     }).then(() => {
+                //         store.dispatch('user/resetToken').then(() => {
+                //             location.reload()
+                //         })
+                //     })
+                // }
             }
-            return Promise.reject(new Error(res.message || 'Error'))
+            return res
+            // return Promise.reject(new Error(res.message || 'Error'))
         } else {
             return res
         }

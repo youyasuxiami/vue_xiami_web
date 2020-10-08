@@ -24,13 +24,13 @@ export function getPraiseListByUser (params) {
   })
 }
 
-export function addComment (params) {
-  return request({
-    url: process.env.WEB_API + '/web/comment/add',
-    method: 'post',
-    data: params
-  })
-}
+// export function addComment (params) {
+//   return request({
+//     url: process.env.WEB_API + '/web/comment/add',
+//     method: 'post',
+//     data: params
+//   })
+// }
 
 export function deleteComment (params) {
   return request({
@@ -43,6 +43,15 @@ export function deleteComment (params) {
 export function reportComment (params) {
   return request({
     url: process.env.WEB_API + '/web/comment/report',
+    method: 'post',
+    data: params
+  })
+}
+
+
+export function addComment(params) {
+  return request({
+    url: '/web/addComment',
     method: 'post',
     data: params
   })

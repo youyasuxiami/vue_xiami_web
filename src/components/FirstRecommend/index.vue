@@ -1,13 +1,15 @@
 <template>
   <div class="banner">
     <el-carousel class="bannerBox" indicator-position="outside">
-      <el-carousel-item v-for="item in 4" :key="item">
+      <el-carousel-item  v-for="(list,index) in slideList" :key="index">
         <img
           style="width:100%; height:100%; display:block;cursor:pointer;"
-          src="https://unsplash.it/800/450?image=1005"
-          @click="goToInfo(list.uid)">
-        <div class="carousel-title" @click="goToInfo(list.uid)">
-          <span>{{item}}</span>
+          v-if="list.firstPicture"
+          :src="list.firstPicture"
+          :alt="list.title"
+          @click="goToInfo(list.id)">
+        <div class="carousel-title" @click="goToInfo(list.id)">
+          <span>{{list.title}}</span>
         </div>
       </el-carousel-item>
     </el-carousel>
@@ -17,18 +19,36 @@
 </template>
 
 <script>
+  import { getBlogByLevel } from "../../api/index";
+
   export default {
-    // data() {
-    //   return {
-    //     isLogin: false
-    //   }
-    // },
+    data() {
+      return {
+        PICTURE_HOST: process.env.PICTURE_HOST,
+        isShow: false, //控制左右滑动按钮是否显示
+        slideList: [],
+        currentIndex: 0,
+        timer: "",
+        firstData: [] //；一级推荐数据
+      };
+    },
+    created() {
+      var params = new URLSearchParams();
+      params.append("level", 1);
+      getBlogByLevel(params).then(response => {
+        this.slideList = response.data;
+      });
+    },
     methods: {
-      goToInfo(uid) {
+      goToInfo(id) {
+        console.log("*************")
+        console.log(id)
         let routeData = this.$router.resolve({
           path: "/info",
-          query: {blogUid: uid}
+          query: {blogId: id}
         });
+        console.log("----------------")
+        console.log(routeData)
         window.open(routeData.href, '_blank');
       }
     }

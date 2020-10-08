@@ -11,8 +11,8 @@
       </div>
       <el-divider></el-divider>
       <el-form :label-position="labelPosition" :rules="loginRules" :model="loginForm" ref="loginForm">
-        <el-form-item label="用户名" prop="userName">
-          <el-input v-model="loginForm.userName" placeholder="请输入用户名或邮箱" :disabled="loginType.password"></el-input>
+        <el-form-item label="用户名" prop="name">
+          <el-input v-model="loginForm.name" placeholder="请输入用户名或邮箱" :disabled="loginType.password"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
           <el-input type="password" v-model="loginForm.password" placeholder="请输入密码" :disabled="loginType.password"></el-input>
@@ -69,8 +69,8 @@
       </div>
       <el-divider></el-divider>
       <el-form :rules="rules" :label-position="labelPosition" :model="registerForm" ref="registerForm">
-        <el-form-item label="用户名" prop="userName">
-          <el-input v-model="registerForm.userName" placeholder="用户名长度在5~20之间" :disabled="loginType.password"></el-input>
+        <el-form-item label="用户名" prop="name">
+          <el-input v-model="registerForm.name" placeholder="用户名长度在5~20之间" :disabled="loginType.password"></el-input>
         </el-form-item>
 
         <el-form-item label="昵称" prop="nickName">
@@ -106,6 +106,9 @@
 <script>
   import {login, localLogin, localRegister} from "@/api/user";
   import { Loading } from 'element-ui';
+  import { JSEncrypt } from 'jsencrypt'
+  import { getPublicKey } from '@/api/user'
+
   export default {
     name: "share",
     data() {
@@ -115,7 +118,7 @@
           fullscreen: true,
           lock: true
         },
-        vueMoguWebUrl: process.env.VUE_MOGU_WEB,
+        vueMoguWebUrl: "http://localhost:8080",
         // 显示登录页面
         showLogin: true,
         isLogin: false,
@@ -124,11 +127,11 @@
         loading: false,
         labelPosition: "right",
         loginForm: {
-          userName: "",
+          name: "",
           password: ""
         },
         registerForm: {
-          userName: "",
+          name: "",
           password: "",
           password2: "",
           email: ""
@@ -142,7 +145,7 @@
           wechat: true
         },
         loginRules: {
-          userName: [
+          name: [
             {required: true, message: '请输入用户名', trigger: 'blur'},
             { min: 5, message: "用户名长度大于等于 5 个字符", trigger: "blur" },
             { max: 20, message: "用户名长度不能大于 20 个字符", trigger: "blur" }
@@ -154,7 +157,7 @@
           ]
         },
         rules: {
-          userName: [
+          name: [
             {required: true, message: '请输入用户名', trigger: 'blur'},
             { min: 5, message: "用户名长度大于等于 5 个字符", trigger: "blur" },
             { max: 20, message: "用户名长度不能大于 20 个字符", trigger: "blur" }
@@ -182,37 +185,48 @@
     components: {},
     created() {
       this.setLoginTypeList()
+      this.getRsaKey()
     },
     methods: {
+      // 获得公钥
+      getRsaKey() {
+        getPublicKey().then(data => {
+          if (data.code == '20000') {
+            this.rsaKey = data.data
+          } else {
+            console.log('获取公钥失败')
+          }
+        })
+      },
       setLoginTypeList: function() {
         // 获取登录方式列表
-        let webConfigData = this.$store.state.app.webConfigData
-        if(webConfigData.loginTypeList != undefined) {
-          let loginTypeList = JSON.parse(webConfigData.loginTypeList)
-          console.log(loginTypeList.indexOf("2"))
-          for(let a=0; a<loginTypeList.length; a++) {
-            switch (loginTypeList[a]) {
-              case "1": {
+        // let webConfigData = this.$store.state.app.webConfigData
+        // if(webConfigData.loginTypeList != undefined) {
+        //   let loginTypeList = JSON.parse(webConfigData.loginTypeList)
+        //   console.log(loginTypeList.indexOf("2"))
+        //   for(let a=0; a<loginTypeList.length; a++) {
+        //     switch (loginTypeList[a]) {
+        //       case "1": {
                 this.loginType.password = false
-              };break;
-              case "2": {
-                this.loginType.gitee = false
-              };break;
-              case "3": {
-                this.loginType.github = false
-              };break;
-              case "4": {
-                this.loginType.qq = false
-              };break;
-              case "5": {
-                this.loginType.wechat = false
-              };break;
-              default: {
-                console.log("登录方式设置有误！！")
-              }
-            }
-          }
-        }
+        //       };break;
+        //       case "2": {
+        //         this.loginType.gitee = false
+        //       };break;
+        //       case "3": {
+        //         this.loginType.github = false
+        //       };break;
+        //       case "4": {
+        //         this.loginType.qq = false
+        //       };break;
+        //       case "5": {
+        //         this.loginType.wechat = false
+        //       };break;
+        //       default: {
+        //         console.log("登录方式设置有误！！")
+        //       }
+        //     }
+          // }
+        // }
       },
       startLogin: function () {
         this.$refs.loginForm.validate((valid) => {
@@ -222,13 +236,16 @@
             return;
           } else {
             var params = {};
-            params.userName = this.loginForm.userName;
-            params.passWord = this.loginForm.password;
+            params.name = this.loginForm.name;
+            params.password = this.passwordEncryption(
+                    this.loginForm.password + ',' + new Date().getTime()
+            )
             params.isRememberMe = 1;
             localLogin(params).then(response => {
-              if (response.code == "success") {
+              if (response.code == "20000") {
                 // 跳转到首页
-                location.replace(this.vueMoguWebUrl + "/#/?token=" + response.data)
+                // location.replace(this.vueMoguWebUrl + "/#/?token=" + response.data)
+                // location.replace(this.vueMoguWebUrl + "/#/")
                 window.location.reload()
               } else {
                 this.$message({
@@ -246,9 +263,9 @@
             console.log('校验失败')
             return;
           } else {
-            let passWord = this.registerForm.password;
-            let passWord2 = this.registerForm.password2;
-            if(passWord != passWord2) {
+            let password = this.registerForm.password;
+            let password2 = this.registerForm.password2;
+            if(password != password2) {
               this.$message({
                 type: "success",
                 message: "两次密码不一致"
@@ -256,12 +273,15 @@
               return;
             }
             var params = {};
-            params.userName = this.registerForm.userName;
-            params.passWord = this.registerForm.password;
+            params.name = this.registerForm.name;
+            // 加密
+            params.password = this.passwordEncryption(
+                    this.registerForm.password + ',' + new Date().getTime()
+            )
             params.email = this.registerForm.email;
             params.nickName = this.registerForm.nickName
             localRegister(params).then(response => {
-              if (response.code == "success") {
+              if (response.code == "20000") {
                 this.$message({
                   type: "success",
                   message: response.data
@@ -302,7 +322,15 @@
       },
       closeLogin: function() {
         this.$emit("closeLoginBox", "");
-      }
+      },
+      //密码加密方法
+      passwordEncryption(passwordUser) {
+        let publicKey = this.rsaKey // 从后台获取公钥
+        let encryptor = new JSEncrypt() // 新建JSEncrypt对象
+        encryptor.setPublicKey(publicKey) // 设置公钥
+        let passwordEncryp = encryptor.encrypt(passwordUser) // 对密码进行加密
+        return passwordEncryp
+      },
     }
   };
 </script>

@@ -12,7 +12,10 @@ export default new Router({
       path: '/',
       component: HomeIndex,
       children: [
-        { path: '/', component: () => import('@/views/index') }
+        { path: '/', component: () => import('@/views/index') },
+        { path: '/about', component: () => import('@/views/about') },
+        { path: '/info', component: () => import('@/views/info') },
+
       ]
     },
     { path: '/404', component: () => import('@/views/404') },

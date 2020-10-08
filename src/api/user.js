@@ -84,7 +84,7 @@ export function deleteUserAccessToken(params) {
  */
 export function localLogin(params) {
   return request({
-    url: process.env.WEB_API + '/login/login',
+    url: '/login/login',
     method: 'post',
     data: params
   })
@@ -96,16 +96,48 @@ export function localLogin(params) {
  */
 export function localRegister(params) {
   return request({
-    url: process.env.WEB_API + '/login/register',
+    url: '/login/register',
     method: 'post',
     data: params
   })
 }
 
-export function logout(params) {
+// export function logout(params) {
+//   return request({
+//     url: process.env.WEB_API + '/user/logout',
+//     method: 'post',
+//     data: params
+//   })
+// }
+
+export function getPublicKey() {
   return request({
-    url: process.env.WEB_API + '/user/logout',
+    url: '/getPublicKey',
+    method: 'get',
+  })
+}
+
+// 获取当前账号的信息
+export function getInfo() {
+  return request({
+    url: '/login/info',
+    method: 'get',
+  })
+}
+
+export function logout() {
+  return request({
+    url: '/login/logout',
     method: 'post',
-    data: params
+  })
+}
+
+
+// 获取当前账号的信息(包含付款码)
+export function getUserInfo(params) {
+  return request({
+    url: '/login/getUserInfo',
+    method: 'get',
+    params
   })
 }
