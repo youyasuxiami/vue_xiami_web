@@ -1,6 +1,10 @@
 /**
  * CookieUtil常用的一些工具类
  */
+import Cookies from 'js-cookie'
+
+const TokenKey = 'token'
+
 
 export function setCookie(name, value, days) {
   // var exp = new Date();
@@ -55,11 +59,13 @@ export function setCookie(name, value, days) {
 }
 
 export function getCookie(name) {
-  var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)")
-  if (arr = document.cookie.match(reg))
-    return unescape(arr[2])
-  else
-    return null
+  // var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)")
+  // if (arr = document.cookie.match(reg))
+  //   return unescape(arr[2])
+  // else
+  //   return null
+  return Cookies.get(TokenKey)
+
 }
 
 export function delCookie(name) {

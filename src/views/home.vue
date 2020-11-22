@@ -177,6 +177,7 @@
             }
         },
         created() {
+            console.log("进来***********************************")
             // 字典查询
             this.getCurrentPageTitle()
             //获得token信息
@@ -320,16 +321,16 @@
              * 截取URL中的参数
              * @returns {{}}
              */
-            // getUrlVars: function () {
-            //   var vars = {};
-            //   var parts = window.location.href.replace(
-            //           /[?&]+([^=&]+)=([^&#]*)/gi,
-            //           function (m, key, value) {
-            //             vars[key] = value;
-            //           }
-            //   );
-            //   return vars;
-            // },
+            getUrlVars: function () {
+              var vars = {};
+              var parts = window.location.href.replace(
+                      /[?&]+([^=&]+)=([^&#]*)/gi,
+                      function (m, key, value) {
+                        vars[key] = value;
+                      }
+              );
+              return vars;
+            },
 
             getToken: function () {
                 // let token = this.getUrlVars()["token"];
@@ -339,9 +340,13 @@
                 //   setCookie("token", token, 7)
                 // }
                 // 从cookie中获取token
-                // token = getCookie("token")
-                // if (token != undefined) {
+                let token = getCookie("token")
+                // console.log("获取token")
+                // console.log(token)
+                if (token != undefined) {
                 getInfo().then(response => {
+                    // console.log("获取用户信息")
+                    // console.log(response)
                     if (response.code == "20000") {
                         this.isLogin = true;
                         this.userInfo = response.data;
@@ -352,10 +357,10 @@
                     }
                     this.setLoginState(this.isLogin);
                 });
-                // } else {
-                //   this.isLogin = false;
-                //   this.setLoginState(this.isLogin);
-                // }
+                } else {
+                  this.isLogin = false;
+                  this.setLoginState(this.isLogin);
+                }
             }
         }
     }
