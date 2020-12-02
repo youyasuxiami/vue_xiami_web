@@ -145,6 +145,7 @@
     // import {getListByDictTypeList} from "@/api/sysDictData"
     // vuex中有mapState方法，相当于我们能够使用它的getset方法
     import {mapMutations} from 'vuex';
+    import {SET_USER_INFO,SET_LOGIN_STATE} from "@/store/mutation-types";
     // import {timeAgo} from "../utils/webUtils";
 
     export default {
@@ -185,7 +186,8 @@
 
         },
         methods: {
-            ...mapMutations(['setUserInfo', 'setLoginState']),
+            // ...mapMutations(['setUserInfo', 'setLoginState']),
+            ...mapMutations({SET_USER_INFO,SET_LOGIN_STATE}),
 
             openHead: function () {
                 this.showHead = !this.showHead;
@@ -240,22 +242,23 @@
                 this.showLogin = false;
             },
             userLogout: function () {
+
+                // 后端删除token
                 logout();
-                  window.location.reload()
 
               // deleteUserAccessToken(getCookie("token"));
-                // delCookie("token");
-                // let url = window.parent.location.href;
-                // let haveToken = url.indexOf("?token")
-                // if (haveToken != -1) {
-                //     let list = url.split("?token");
-                //     this.isLogin = false;
-                //     window.location.href = list[0]
-                //     let userInfo = {};
-                //     this.setUserInfo(userInfo)
-                // } else {
-                //     window.location.reload()
-                // }
+                delCookie("token");
+                let url = window.parent.location.href;
+                let haveToken = url.indexOf("?token")
+                if (haveToken != -1) {
+                    let list = url.split("?token");
+                    this.isLogin = false;
+                    window.location.href = list[0]
+                    let userInfo = {};
+                    this.SET_USER_INFO(userInfo)
+                } else {
+                    window.location.reload()
+                }
             },
             userLogin: function () {
                 this.showLogin = true;
@@ -341,25 +344,28 @@
                 // }
                 // 从cookie中获取token
                 let token = getCookie("token")
-                // console.log("获取token")
-                // console.log(token)
+                console.log("获取token")
+                console.log(token)
                 if (token != undefined) {
-                getInfo().then(response => {
-                    // console.log("获取用户信息")
-                    // console.log(response)
-                    if (response.code == "20000") {
-                        this.isLogin = true;
-                        this.userInfo = response.data;
-                        this.setUserInfo(this.userInfo)
-                    } else {
-                        this.isLogin = false;
-                        delCookie("token");
-                    }
-                    this.setLoginState(this.isLogin);
-                });
+                    getInfo().then(response => {
+                        console.log("获取用户信息")
+                        console.log(response)
+                        if (response.code == "20000") {
+                            this.isLogin = true;
+                            this.userInfo = response.data;
+                            this.SET_USER_INFO(this.userInfo)
+                            // this.$store.commit(SET_USER_INFO,this.userInfo)
+                        } else {
+                            this.isLogin = false;
+                            delCookie("token");
+                        }
+                        // this.$store.commit(SET_LOGIN_STATE,this.isLogin)
+                        this.SET_LOGIN_STATE(this.isLogin);
+                    });
                 } else {
-                  this.isLogin = false;
-                  this.setLoginState(this.isLogin);
+                    this.isLogin = false;
+                    this.SET_LOGIN_STATE(this.isLogin);
+                    // this.$store.commit(SET_LOGIN_STATE,this.isLogin)
                 }
             }
         }
@@ -418,7 +424,7 @@
             width: 35px;
             height: 35px;
             position: absolute;
-            right: 0px;
+            right: 0;
             top: 12px;
         }
 
@@ -432,7 +438,7 @@
     .avatar-uploader .el-upload {
         border: 1px dashed #d9d9d9;
         border-radius: 6px;
-        margin: 0, 0, 0, 10px;
+        margin: 0 0 0 10px;
         cursor: pointer;
         position: relative;
         overflow: hidden;

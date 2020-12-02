@@ -108,6 +108,8 @@
   import { Loading } from 'element-ui';
   import { JSEncrypt } from 'jsencrypt'
   import { getPublicKey } from '@/api/user'
+  import { setCookie} from "@/utils/cookieUtils";
+
 
   export default {
     name: "share",
@@ -230,9 +232,7 @@
       },
       startLogin: function () {
         this.$refs.loginForm.validate((valid) => {
-          console.log("开始校验", valid)
           if(!valid) {
-            console.log('校验失败')
             return;
           } else {
             var params = {};
@@ -246,6 +246,8 @@
                 // 跳转到首页
                 // location.replace(this.vueMoguWebUrl + "/#/?token=" + response.data)
                 // location.replace(this.vueMoguWebUrl + "/#/")
+                //设置七天过期
+                setCookie("token",response.data.token,7)
                 window.location.reload()
               } else {
                 this.$message({

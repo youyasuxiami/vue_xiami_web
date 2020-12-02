@@ -84,7 +84,7 @@ export function deleteUserAccessToken(params) {
  */
 export function localLogin(params) {
   return request({
-    url: '/login/login',
+    url: '/front/login',
     method: 'post',
     data: params
   })
@@ -96,7 +96,7 @@ export function localLogin(params) {
  */
 export function localRegister(params) {
   return request({
-    url: '/login/register',
+    url: '/front/register',
     method: 'post',
     data: params
   })
@@ -120,14 +120,14 @@ export function getPublicKey() {
 // 获取当前账号的信息
 export function getInfo() {
   return request({
-    url: '/login/info',
+    url: '/front/info',
     method: 'get',
   })
 }
 
 export function logout() {
   return request({
-    url: '/login/logout',
+    url: '/front/logout',
     method: 'post',
   })
 }
@@ -136,7 +136,7 @@ export function logout() {
 // 获取当前账号的信息(包含付款码)
 export function getUserInfo(params) {
   return request({
-    url: '/login/getUserInfo',
+    url: '/front/getUserInfo',
     method: 'get',
     params
   })

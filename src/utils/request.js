@@ -7,16 +7,16 @@ import { MessageBox, Message, notify } from 'element-ui'
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_URL, // api 的 base_url
     withCredentials: true, //让ajax携带cookie
-    timeout: 200000 // 请求超时时间 10秒
+    timeout: 20000 // 请求超时时间 20秒
 })
 
-service.defaults.headers.common['Authorization'] = getCookie("token")
+// service.defaults.headers.common['authorization'] = getCookie("token")
 
 // request拦截器
 service.interceptors.request.use(
   config => {
     if (getCookie("token") != undefined) {
-      config.headers.Authorization = getCookie("token") // 让每个请求携带自定义token 请根据实际情况自行修改
+        config.headers['authorization'] = getCookie("token") // 让每个请求携带自定义token 请根据实际情况自行修改
     }
     return config
   },
