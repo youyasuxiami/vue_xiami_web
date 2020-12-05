@@ -10,7 +10,7 @@ const hostName = process.env.VUE_APP_HOST_NAME
 module.exports = {
     publicPath: "./",
     lintOnSave: false, //关闭eslint
-    // outputDir: process.env.outputDir,npm
+    // outputDir: process.env.outputDir,
     assetsDir: "static",
     devServer: {
         proxy: {
