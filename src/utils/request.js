@@ -6,7 +6,7 @@ import { MessageBox, Message, notify } from 'element-ui'
 // 创建axios实例
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_URL, // api 的 base_url
-    withCredentials: true, //让ajax携带cookie
+    // withCredentials: true, //让ajax携带cookie
     timeout: 20000 // 请求超时时间 20秒
 })
 

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:zhengjin_web" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="17c216e3-1706-4aaf-bcb9-b759e92d2e4c" name="Default Changelist" comment="1、实现了前后端的history模式，仅生产环境">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vue-xiami-web.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectId" id="1gnh6QI5jUvz5pHEqfh6qHDIt4N" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.5.0" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/为什么有图标/xiami-blog-vue" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\86138\Desktop\vue模板\用vuecli3创建的vue博客项目\vue-xiami-web\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.webpack" />
+    <property name="ts.external.directory.path" value="F:\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\vue_workspaces\vue-xiami-web\src" />
+      <recent name="F:\vue_workspaces\vue-xiami-web" />
+      <recent name="F:\vue_workspaces\vue-xiami-web\src\utils" />
+      <recent name="F:\vue_workspaces\vue-xiami-web\src\components" />
+      <recent name="F:\vue_workspaces\vue-xiami-web\src\store" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.serve" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17c216e3-1706-4aaf-bcb9-b759e92d2e4c" name="Default Changelist" comment="" />
+      <created>1598756088067</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598756088067</updated>
+      <workItem from="1598756089696" duration="8356000" />
+      <workItem from="1598776554829" duration="23000" />
+      <workItem from="1598776598753" duration="3000" />
+      <workItem from="1598776642744" duration="714000" />
+      <workItem from="1598777700138" duration="288000" />
+      <workItem from="1598778023872" duration="202000" />
+      <workItem from="1598778676276" duration="237000" />
+      <workItem from="1598778918849" duration="9000" />
+      <workItem from="1598779864620" duration="25000" />
+      <workItem from="1598781868909" duration="7952000" />
+      <workItem from="1598797780707" duration="6035000" />
+      <workItem from="1598885832599" duration="15687000" />
+      <workItem from="1599118438011" duration="12000" />
+      <workItem from="1599276128019" duration="7000" />
+      <workItem from="1599276144013" duration="25082000" />
+      <workItem from="1599453292769" duration="1966000" />
+      <workItem from="1599901542226" duration="9269000" />
+      <workItem from="1599929987050" duration="13525000" />
+      <workItem from="1599992140189" duration="1041000" />
+      <workItem from="1599993270510" duration="17313000" />
+      <workItem from="1600095031236" duration="4808000" />
+      <workItem from="1600260856329" duration="820000" />
+      <workItem from="1600261753478" duration="5835000" />
+      <workItem from="1600315768628" duration="2732000" />
+      <workItem from="1600361361168" duration="100000" />
+      <workItem from="1600361480088" duration="2737000" />
+      <workItem from="1600497970998" duration="32082000" />
+      <workItem from="1600683018582" duration="1407000" />
+      <workItem from="1601516526480" duration="111000" />
+      <workItem from="1601864079949" duration="162000" />
+      <workItem from="1601945429097" duration="1991000" />
+      <workItem from="1602167518174" duration="3739000" />
+      <workItem from="1602171633774" duration="58000" />
+      <workItem from="1602219325305" duration="521000" />
+      <workItem from="1602294321602" duration="46000" />
+      <workItem from="1602408166582" duration="531000" />
+      <workItem from="1602471756926" duration="12000" />
+      <workItem from="1605678375163" duration="774000" />
+      <workItem from="1605705089873" duration="878000" />
+      <workItem from="1605798918199" duration="3923000" />
+      <workItem from="1605803514032" duration="1309000" />
+      <workItem from="1605922741693" duration="2505000" />
+      <workItem from="1606200232763" duration="174000" />
+      <workItem from="1606435147195" duration="688000" />
+      <workItem from="1606436865787" duration="6822000" />
+      <workItem from="1606750986803" duration="11793000" />
+      <workItem from="1606830069425" duration="422000" />
+      <workItem from="1606830531119" duration="226000" />
+      <workItem from="1606830916377" duration="382000" />
+      <workItem from="1606831551642" duration="12000" />
+      <workItem from="1606831582077" duration="9608000" />
+      <workItem from="1606871450206" duration="991000" />
+      <workItem from="1606889737948" duration="116000" />
+      <workItem from="1606899206687" duration="84000" />
+      <workItem from="1606915674219" duration="7060000" />
+      <workItem from="1606923879997" duration="3522000" />
+      <workItem from="1606957902617" duration="1480000" />
+      <workItem from="1606971948133" duration="112000" />
+      <workItem from="1606999926278" duration="3174000" />
+      <workItem from="1607007126971" duration="1577000" />
+      <workItem from="1607134903364" duration="2202000" />
+      <workItem from="1607137137171" duration="55000" />
+      <workItem from="1607137360329" duration="1424000" />
+      <workItem from="1607141277459" duration="4316000" />
+      <workItem from="1607159837110" duration="2848000" />
+      <workItem from="1607163842783" duration="1608000" />
+    </task>
+    <task id="LOCAL-00001" summary="搬砖完成">
+      <created>1598778800753</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598778800753</updated>
+    </task>
+    <task id="LOCAL-00002" summary="可以动态显示后台博客数据">
+      <created>1598980934281</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598980934281</updated>
+    </task>
+    <task id="LOCAL-00003" summary="实现了评论功能">
+      <created>1602168730590</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602168730590</updated>
+    </task>
+    <task id="LOCAL-00004" summary="实现了评论功能">
+      <created>1602171666131</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602171666131</updated>
+    </task>
+    <task id="LOCAL-00005" summary="shiro整合jwt">
+      <created>1606044063262</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606044063262</updated>
+    </task>
+    <task id="LOCAL-00006" summary="修改前">
+      <created>1606919320524</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606919320524</updated>
+    </task>
+    <task id="LOCAL-00007" summary="1、实现了前后端的history模式，仅生产环境">
+      <created>1607137183605</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607137183605</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.test" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="zhengjin_web" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="搬砖完成" />
+    <MESSAGE value="可以动态显示后台博客数据" />
+    <MESSAGE value="实现了评论功能" />
+    <MESSAGE value="shiro整合jwt" />
+    <MESSAGE value="修改前" />
+    <MESSAGE value="1、实现了前后端的history模式，仅生产环境" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、实现了前后端的history模式，仅生产环境" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="481" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598803421206">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="481" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1598803421206" />
+    <state x="511" y="248" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1601516577533">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="511" y="248" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.824@0.0.1536.824" timestamp="1601516577533" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605800541708">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605800541708" />
+    <state x="304" y="0" key="CommitChangelistDialog2" timestamp="1607137182256">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="304" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1607137182256" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1606915757248">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1606915757248" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1607163451293">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607163451293" />
+    <state width="1515" height="289" key="GridCell.Tab.0.bottom" timestamp="1606923416369">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="289" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606923416369" />
+    <state width="1515" height="289" key="GridCell.Tab.0.center" timestamp="1606923416369">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="289" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606923416369" />
+    <state width="1515" height="289" key="GridCell.Tab.0.left" timestamp="1606923416368">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="289" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606923416368" />
+    <state width="1515" height="289" key="GridCell.Tab.0.right" timestamp="1606923416369">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="289" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606923416369" />
+    <state x="270" y="56" width="996" height="709" key="SettingsEditor" timestamp="1607159603674">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="56" width="996" height="709" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607159603674" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1607137188925">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607137188925" />
+    <state x="355" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600001329598">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="355" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1600001329598" />
+    <state x="447" y="150" width="642" height="556" key="find.popup" timestamp="1607166123132">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="447" y="150" width="642" height="556" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607166123132" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606922781986">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606922781986" />
+  </component>
+</project>

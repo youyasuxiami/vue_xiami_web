@@ -1,38 +1,27 @@
 const path = require('path')
 const webpack = require('webpack')
 
+const defaultSettings = require('./src/settings.js')
+
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
 
-const hostName = process.env.VUE_APP_HOST_NAME
+const name = defaultSettings.title // page title
+
 
 module.exports = {
     publicPath: "./",
     lintOnSave: false, //关闭eslint
-    // outputDir: process.env.outputDir,
-    assetsDir: "static",
-    devServer: {
-        proxy: {
-            //     '/':{
-            //         ws:false,
-            //         target:'http://localhost:8086',
-            //         changeOrigin:true,
-            //         // pathRewrite:{
-            //         //     '/':''
-            //         // }
-            //     },
-            [process.env.VUE_APP_BASE_URL]: {
-                ws: false,
-                target: hostName,
-                changeOrigin: true,
-                pathRewrite: {
-                    ['^' + process.env.VUE_APP_BASE_URL]: ''
-                }
+    outputDir: 'dist',
+    assetsDir: "assets",
+    configureWebpack: {
+        name: name,
+        resolve: {
+            alias: { //绝对路径
+                '@': resolve('src')
             }
         },
-    },
-    configureWebpack: {
         plugins: [
             new webpack.ProvidePlugin({
                 $: "jquery",
@@ -42,5 +31,13 @@ module.exports = {
             })
         ]
     },
+    // chainWebpack: config => {
+    //     config
+    //         .plugin('html')
+    //         .tap(args => {
+    //             args[0].title= '你想设置的title名字'
+    //             return args
+    //         })
+    // }
 };
 
