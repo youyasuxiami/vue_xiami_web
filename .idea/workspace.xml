@@ -25,20 +25,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17c216e3-1706-4aaf-bcb9-b759e92d2e4c" name="Default Changelist" comment="1、实现了前后端的history模式，仅生产环境">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vue-xiami-web.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+    <list default="true" id="17c216e3-1706-4aaf-bcb9-b759e92d2e4c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/alias.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/sort.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/sort.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FirstRecommend/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FirstRecommend/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +71,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.5.0" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/为什么有图标/xiami-blog-vue" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/api" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\86138\Desktop\vue模板\用vuecli3创建的vue博客项目\vue-xiami-web\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="settings.webpack" />
@@ -84,11 +79,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\vue_workspaces\vue-xiami-web\src" />
+      <recent name="F:\vue_workspaces\vue-xiami-web\src\api" />
+      <recent name="F:\vue_workspaces\vue-xiami-web\src\views" />
       <recent name="F:\vue_workspaces\vue-xiami-web" />
+      <recent name="F:\vue_workspaces\vue-xiami-web\src" />
       <recent name="F:\vue_workspaces\vue-xiami-web\src\utils" />
-      <recent name="F:\vue_workspaces\vue-xiami-web\src\components" />
-      <recent name="F:\vue_workspaces\vue-xiami-web\src\store" />
     </key>
   </component>
   <component name="RunManager" selected="npm.build">
@@ -194,7 +189,12 @@
       <workItem from="1607137360329" duration="1424000" />
       <workItem from="1607141277459" duration="4316000" />
       <workItem from="1607159837110" duration="2848000" />
-      <workItem from="1607163842783" duration="1608000" />
+      <workItem from="1607163842783" duration="2462000" />
+      <workItem from="1607174287013" duration="610000" />
+      <workItem from="1607175295397" duration="7516000" />
+      <workItem from="1607261721449" duration="787000" />
+      <workItem from="1607300581945" duration="3101000" />
+      <workItem from="1607520110258" duration="5335000" />
     </task>
     <task id="LOCAL-00001" summary="搬砖完成">
       <created>1598778800753</created>
@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607137183605</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1、实现了前后端的history模式，包括开发环境，生产环境">
+      <created>1607167907262</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607167907262</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,13 +295,10 @@
     <MESSAGE value="shiro整合jwt" />
     <MESSAGE value="修改前" />
     <MESSAGE value="1、实现了前后端的history模式，仅生产环境" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、实现了前后端的history模式，仅生产环境" />
+    <MESSAGE value="1、实现了前后端的history模式，包括开发环境，生产环境" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、实现了前后端的history模式，包括开发环境，生产环境" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="481" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598803421206">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="481" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1598803421206" />
     <state x="511" y="248" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1601516577533">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -303,18 +307,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605800541708" />
-    <state x="304" y="0" key="CommitChangelistDialog2" timestamp="1607137182256">
+    <state x="304" y="0" key="CommitChangelistDialog2" timestamp="1607167906004">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="304" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1607137182256" />
+    <state x="304" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1607167906004" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1606915757248">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1606915757248" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1607163451293">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1607241034281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607163451293" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607241034281" />
     <state width="1515" height="289" key="GridCell.Tab.0.bottom" timestamp="1606923416369">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -331,25 +335,29 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="289" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606923416369" />
-    <state x="270" y="56" width="996" height="709" key="SettingsEditor" timestamp="1607159603674">
+    <state x="270" y="56" width="996" height="709" key="SettingsEditor" timestamp="1607241035686">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="56" width="996" height="709" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607159603674" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1607137188925">
+    <state x="270" y="56" width="996" height="709" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607241035686" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1607529994827">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607137188925" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1607529994827" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1607167914203">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607167914203" />
     <state x="355" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600001329598">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="355" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1600001329598" />
-    <state x="447" y="150" width="642" height="556" key="find.popup" timestamp="1607166123132">
+    <state x="447" y="150" width="642" height="556" key="find.popup" timestamp="1607260404037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="150" width="642" height="556" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607166123132" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606922781986">
+    <state x="447" y="150" width="642" height="556" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607260404037" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607234588752">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606922781986" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607234588752" />
   </component>
 </project>

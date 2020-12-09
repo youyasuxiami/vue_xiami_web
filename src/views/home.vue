@@ -20,7 +20,7 @@
                 </router-link>
             </div>
 
-            <h2 id="mnavh" @click="openHead" :class="showHead?'open':''">
+            <h2 id="mnavh" @click="openHead" :class="showHead?'open':''" class="title">
                 <span class="navicon"></span>
             </h2>
 
@@ -178,7 +178,6 @@
             }
         },
         created() {
-            console.log("进来***********************************")
             // 字典查询
             this.getCurrentPageTitle()
             //获得token信息
@@ -302,23 +301,11 @@
                 window.scrollTo(0, 0);
             },
             /**
-             * 获取当前所在页面的标题
+             * 获取当前所在页面的uri
              * @returns {{}}
              */
             getCurrentPageTitle: function () {
-                var test = window.location.href;
-                var start = 0;
-                var end = test.length;
-                for (var i = 0; i < test.length; i++) {
-                    if (test[i] == "#") {
-                        start = i;
-                    }
-                    if (test[i] == "?" && i > start) {
-                        end = i;
-                    }
-                }
-                var result = test.substring(start + 1, end);
-                this.saveTitle = result;
+                this.saveTitle = window.location.pathname;
             },
             /**
              * 截取URL中的参数

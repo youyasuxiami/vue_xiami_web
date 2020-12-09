@@ -33,22 +33,20 @@
       };
     },
     created() {
-      var params = new URLSearchParams();
+      let params = new URLSearchParams();
       params.append("level", 1);
       getBlogByLevel(params).then(response => {
         this.slideList = response.data;
+        console.log("获得一级推荐")
+        console.log(this.slideList)
       });
     },
     methods: {
       goToInfo(id) {
-        console.log("*************")
-        console.log(id)
         let routeData = this.$router.resolve({
           path: "/info",
           query: {blogId: id}
         });
-        console.log("----------------")
-        console.log(routeData)
         window.open(routeData.href, '_blank');
       }
     }

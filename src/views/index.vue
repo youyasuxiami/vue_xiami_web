@@ -7,13 +7,13 @@
 
             <!-- 二级推荐 -->
             <div class="toppic">
-                <li v-for="item in 2" :key="item" @click="goToInfo(item.uid)">
+                <li v-for="(item,index) in secondList" :key="index" @click="goToInfo(item.id)">
                     <a href="javascript:void(0);">
                         <i>
-                            <img src="https://unsplash.it/800/450?image=1005">
+                            <img :src="item.firstPicture">
                         </i>
-                        <h2>{{item}}</h2>
-                        <span>{{item}}</span>
+                        <h2>{{item.content}}</h2>
+                        <span>{{item.description}}</span>
                     </a>
                 </li>
             </div>
@@ -118,7 +118,7 @@
 
 <script>
     import FirstRecommend from "../components/FirstRecommend";
-    import {getNewBlog} from "../api/index";
+    import {getBlogByLevel, getNewBlog} from "../api/index";
     import {Loading} from "element-ui";
     // 标签组件
     import TagCloud from "../components/TagCloud";
@@ -150,6 +150,7 @@
                 total: 0, //总数量
                 isEnd: false, //是否到底底部了
                 loadingInstance: null, // loading对象
+                secondList:[]
             }
         },
         mounted() {
@@ -159,14 +160,15 @@
         },
         created() {
             this.newBlogList();
+            // 获得二级推荐（2个）
+            this.getSecondRecommend()
         },
         methods: {
             //跳转到文章详情
-            goToInfo(uid) {
-
+            goToInfo(id) {
                 let routeData = this.$router.resolve({
                     path: "/info",
-                    query: {blogUid: uid}
+                    query: {blogId: id}
                 });
                 window.open(routeData.href, '_blank');
             },
@@ -213,6 +215,15 @@
                         that.isEnd = true;
                     }
                     that.loading = false;
+                });
+            },
+            getSecondRecommend(){
+                let params = new URLSearchParams();
+                params.append("level", 2);
+                getBlogByLevel(params).then(response => {
+                    this.secondList = response.data;
+                    console.log("获得二级推荐数据---------------------")
+                    console.log(this.secondList)
                 });
             }
 

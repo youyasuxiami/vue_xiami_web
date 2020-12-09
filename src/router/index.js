@@ -14,8 +14,9 @@ export default new Router({
       component: HomeIndex,
       children: [
         { path: '/', component: () => import('@/views/index') },
-        { path: '/about', component: () => import('@/views/about') },
         { path: '/info', component: () => import('@/views/info') },
+        { path: '/about', component: () => import('@/views/about') },
+        { path: '/sort', component: () => import('@/views/sort') }
 
       ]
     },
