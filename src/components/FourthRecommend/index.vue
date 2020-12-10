@@ -1,6 +1,6 @@
 <template>
     <div class="tuijian" v-if="fourthData.length > 0">
-      <h2 class="hometitle">推荐文章12</h2>
+      <h2 class="hometitle">推荐文章</h2>
       <ul class="tjpic" v-if="fourthData[0]">
         <i><img v-if="fourthData[0].firstPicture" style="cursor:pointer"  @click="goToInfo(fourthData[0].id)" :src="fourthData[0].firstPicture"></i>
         <p><a href="javascript:void(0);" @click="goToInfo(fourthData[0].id)">{{fourthData[0].title}}</a></p>

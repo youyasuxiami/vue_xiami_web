@@ -25,15 +25,17 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17c216e3-1706-4aaf-bcb9-b759e92d2e4c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/alias.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/sort.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/sort.vue" afterDir="false" />
+    <list default="true" id="17c216e3-1706-4aaf-bcb9-b759e92d2e4c" name="Default Changelist" comment="实现了归档管理">
+      <change afterPath="$PROJECT_DIR$/src/api/classify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/tag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/classify.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/messageBoard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/tag.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FirstRecommend/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FirstRecommend/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FollowUs/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FollowUs/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FourthRecommend/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FourthRecommend/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +196,9 @@
       <workItem from="1607175295397" duration="7516000" />
       <workItem from="1607261721449" duration="787000" />
       <workItem from="1607300581945" duration="3101000" />
-      <workItem from="1607520110258" duration="5335000" />
+      <workItem from="1607520110258" duration="5790000" />
+      <workItem from="1607574347188" duration="1333000" />
+      <workItem from="1607581870503" duration="13589000" />
     </task>
     <task id="LOCAL-00001" summary="搬砖完成">
       <created>1598778800753</created>
@@ -252,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607167907262</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="实现了归档管理">
+      <created>1607530573754</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607530573754</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +307,8 @@
     <MESSAGE value="修改前" />
     <MESSAGE value="1、实现了前后端的history模式，仅生产环境" />
     <MESSAGE value="1、实现了前后端的history模式，包括开发环境，生产环境" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、实现了前后端的history模式，包括开发环境，生产环境" />
+    <MESSAGE value="实现了归档管理" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了归档管理" />
   </component>
   <component name="WindowStateProjectService">
     <state x="511" y="248" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1601516577533">
@@ -307,14 +319,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605800541708" />
-    <state x="304" y="0" key="CommitChangelistDialog2" timestamp="1607167906004">
+    <state x="532" y="64" key="#sort.vue" timestamp="1607530993619">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="304" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1607167906004" />
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1606915757248">
+    <state x="532" y="64" key="#sort.vue/0.0.1536.824@0.0.1536.824" timestamp="1607530993619" />
+    <state x="304" y="0" key="CommitChangelistDialog2" timestamp="1607615943671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1606915757248" />
+    <state x="304" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1607615943671" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1607615938634">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1607615938634" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1607241034281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -339,22 +355,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="56" width="996" height="709" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607241035686" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1607529994827">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1607609896965">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1607529994827" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1607167914203">
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1607609896965" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1607530579875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607167914203" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607530579875" />
     <state x="355" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600001329598">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="355" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1600001329598" />
-    <state x="447" y="150" width="642" height="556" key="find.popup" timestamp="1607260404037">
+    <state x="447" y="150" width="642" height="556" key="find.popup" timestamp="1607617432030">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="150" width="642" height="556" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607260404037" />
+    <state x="447" y="150" width="642" height="556" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607617432030" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607234588752">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

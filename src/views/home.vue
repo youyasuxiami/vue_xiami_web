@@ -31,11 +31,11 @@
                     </router-link>
                 </li>
 
-                <li>
-                    <router-link to="/about">
-                        <a href="javascript:void(0);" :class="[saveTitle == '/about' ? 'title' : '']">关于我</a>
-                    </router-link>
-                </li>
+<!--                <li>-->
+<!--                    <router-link to="/about">-->
+<!--                        <a href="javascript:void(0);" :class="[saveTitle == '/about' ? 'title' : '']">关于我</a>-->
+<!--                    </router-link>-->
+<!--                </li>-->
 
                 <li>
                     <router-link to="/sort">
@@ -71,8 +71,9 @@
                                 type="text"
                                 name="keyboard"
                                 v-model="keyword"
-                                v-on:keyup.enter="search"
                         >
+<!--                                v-on:keyup.enter="search"-->
+<!--                        <p class="search_ico" @click="clickSearchIco">-->
                         <p class="search_ico" @click="clickSearchIco">
                             <span></span>
                         </p>
@@ -204,9 +205,9 @@
                 this.$router.push({path: "/list", query: {keyword: this.keyword}});
             },
             clickSearchIco: function () {
-                if (this.keyword != "") {
-                    this.search();
-                }
+                // if (this.keyword != "") {
+                //     this.search();
+                // }
                 this.showSearch = !this.showSearch;
                 //获取焦点
                 this.$refs.searchInput.focus();

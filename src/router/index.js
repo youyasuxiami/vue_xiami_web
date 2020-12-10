@@ -16,8 +16,10 @@ export default new Router({
         { path: '/', component: () => import('@/views/index') },
         { path: '/info', component: () => import('@/views/info') },
         { path: '/about', component: () => import('@/views/about') },
-        { path: '/sort', component: () => import('@/views/sort') }
-
+        { path: '/sort', component: () => import('@/views/sort') },
+        { path: '/classify', component: () => import('@/views/classify') },
+        { path: '/tag', component: () => import('@/views/tag') },
+        { path: '/messageBoard', component: () => import('@/views/messageBoard') }
       ]
     },
     { path: '/404', component: () => import('@/views/404') },
