@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function getBlogById (params) {
     return request({
-        url: '/content/getBlogById',
+        url: '/message/getBlogById',
         method: 'get',
         params
     })
@@ -10,7 +10,7 @@ export function getBlogById (params) {
 
 export function praiseBlogById (params) {
     return request({
-        url: '/content/praiseBlogById',
+        url: '/message/praiseBlogById',
         method: 'get',
         params
     })
@@ -18,23 +18,23 @@ export function praiseBlogById (params) {
 
 export function getSameBlogByBlogId (params) {
     return request({
-        url: '/content/getSameBlogByBlogId',
+        url: '/message/getSameBlogByBlogId',
         method: 'get',
         params
     })
 }
 
-export function addComment(params) {
+export function addMessage(params) {
     return request({
-        url: '/content/addComment',
+        url: '/message/addMessage',
         method: 'post',
         data: params
     })
 }
 
-export function getCommentList(params) {
+export function getAllMessageList(params) {
     return request({
-        url: '/content/getCommentList',
+        url: '/message/getAllMessageList',
         method: 'post',
         data: params
     })
@@ -42,14 +42,14 @@ export function getCommentList(params) {
 
 export function reportComment (data) {
     return request({
-        url: '/content/reportComment',
+        url: '/message/reportComment',
         method: 'post',
         data
     })
 }
 export function deleteComment (data) {
     return request({
-        url: '/content/deleteComment',
+        url: '/message/deleteComment',
         method: 'delete',
         data
     })
@@ -57,7 +57,7 @@ export function deleteComment (data) {
 
 export function getAllCommentList(params) {
     return request({
-        url: '/content/getAllCommentList',
+        url: '/message/getAllCommentList',
         method: 'post',
         data: params
     })

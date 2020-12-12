@@ -89,6 +89,7 @@
           });
           return;
         }
+        console.log("1111")
 
         if(this.value =="") {
           this.$notify.error({
@@ -134,6 +135,8 @@
         this.count = 1024;
         // this.comments.createTime = dateFormat("YYYY-mm-dd HH:MM:SS", new Date());
         this.hideEmojiPanel()
+        console.log("this.comments")
+        console.log(this.comments)
         this.$emit("submit-box", this.comments)
       },
       emoji(word) {

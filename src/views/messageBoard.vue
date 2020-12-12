@@ -28,10 +28,10 @@
     import CommentList from "../components/CommentList";
     import CommentBox from "../components/CommentBox";
     import Sticky from "@/components/Sticky";
-    import { addComment, getCommentList } from "../api/comment";
-
     // vuex中有mapState方法，相当于我们能够使用它的getset方法
     import { mapMutations } from "vuex";
+    import {addMessage,getAllMessageList} from "../api/message";
+
     export default {
         data() {
             return {
@@ -59,9 +59,9 @@
             CommentBox,
             Sticky
         },
-        // created() {
-        //     this.getCommentDataList();
-        // },
+        created() {
+            this.getCommentDataList();
+        },
         mounted () {
           var that = this;
           // 屏幕的高度
@@ -99,13 +99,12 @@
                 this.getCommentDataList();
             },
             submitBox(e) {
-                let params = {};
-                params.source = e.source;
-                params.userUid = e.userUid;
-                params.content = e.content;
-                params.blogUid = e.blogUid;
-                addComment(params).then(response => {
-                    if (response.code == "success") {
+              let params = {};
+              params.userId = e.userId;
+              params.content = e.content;
+              params.userAvatar = e.avatar;
+              addMessage(params).then(response => {
+                    if (response.code == "20000") {
                         this.$notify({
                             title: "成功",
                             message: "发表成功~",
@@ -122,21 +121,22 @@
                     this.getCommentDataList();
                 });
             },
-            getCommentDataList: function() {
-                let params = {};
-                params.source = "MESSAGE_BOARD";
-                params.currentPage = this.currentPage;
-                params.pageSize = this.pageSize;
-                getCommentList(params).then(response => {
-                    if (response.code == "success") {
-                        this.comments = response.data.records;
-                        this.setCommentList(this.comments);
-                        this.currentPage = response.data.current;
-                        this.pageSize = response.data.size;
-                        this.total = response.data.total;
-                    }
-                });
-            },
+          getCommentDataList: function () {
+            let params = {};
+            // params.source = this.commentInfo.source;
+            // params.blogId = this.commentInfo.blogId;
+            params.currentPage = this.currentPage;
+            params.pageSize = this.pageSize;
+            getAllMessageList(params).then(response => {
+              if (response.code == "20000") {
+                this.comments = response.data.data;
+                this.setCommentList(this.comments);
+                // this.currentPage = response.data.current;
+                // this.pageSize = response.data.size;
+                this.total = response.data.total
+              }
+            });
+          }
         }
     };
 </script>

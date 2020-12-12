@@ -104,6 +104,7 @@
                 });
             },
             replyTo: function (item) {
+
                 if (!this.validLogin()) {
                     this.$notify.error({
                         title: '错误',
@@ -116,14 +117,17 @@
                 let userId = item.userId;
                 let commentId = item.id;
 
-                // if (userId == item.userId) {
-                //     this.$notify.error({
-                //         title: '错误',
-                //         message: "不能回复自己的评论哦~",
-                //         offset: 100
-                //     });
-                //     return;
-                // }
+                let userId1 = this.$store.state.user.userInfo.userId
+
+
+                if (userId1 == item.userId) {
+                    this.$notify.error({
+                        title: '错误',
+                        message: "不能回复自己的评论哦~",
+                        offset: 100
+                    });
+                    return;
+                }
 
                 var lists = document.getElementsByClassName("comment");
                 for (var i = 0; i < lists.length; i++) {
@@ -186,22 +190,7 @@
             },
             cancelBox(toCommentId) {
                 document.getElementById(toCommentId).style.display = 'none'
-            }
-            ,
-            // taggleAll: function (item) {
-            //
-            //   this.taggleStatue = !this.taggleStatue;
-            //   var lists = document.getElementsByClassName("commentStyle");
-            //   for (var i = 0; i < lists.length; i++) {
-            //     lists[i].style.display = 'block';
-            //   }
-            //   if (this.taggleStatue) {
-            //     document.getElementById('commentStyle:' + item.uid).style.display = 'block';
-            //   } else {
-            //     document.getElementById(item.uid).style.display = 'none';
-            //   }
-            // }
-            // ,
+            },
             report: function (item) {
                 if (!this.validLogin()) {
                     this.$notify.error({
@@ -253,6 +242,18 @@
                     });
                     return
                 }
+                let userId = this.$store.state.user.userInfo.userId
+
+                if (userId != item.userId) {
+                    this.$notify.error({
+                        title: '错误',
+                        message: "不能删除别人的评论哦~",
+                        offset: 100
+                    });
+                    return;
+                }
+
+
                 var that = this;
                 let params = {};
                 params.commentId = item.id;
