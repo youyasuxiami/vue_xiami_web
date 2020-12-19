@@ -148,9 +148,9 @@
         },
         loginRules: {
           name: [
-            {required: true, message: '请输入用户名', trigger: 'blur'},
-            { min: 5, message: "用户名长度大于等于 5 个字符", trigger: "blur" },
-            { max: 20, message: "用户名长度不能大于 20 个字符", trigger: "blur" }
+            {required: true, message: '请输入用户名', trigger: 'blur'}
+            // { min: 5, message: "用户名长度大于等于 5 个字符", trigger: "blur" },
+            // { max: 20, message: "用户名长度不能大于 20 个字符", trigger: "blur" }
           ],
           password: [
             { required: true, message: "请输入密码", trigger: "blur" },
@@ -160,9 +160,9 @@
         },
         rules: {
           name: [
-            {required: true, message: '请输入用户名', trigger: 'blur'},
-            { min: 5, message: "用户名长度大于等于 5 个字符", trigger: "blur" },
-            { max: 20, message: "用户名长度不能大于 20 个字符", trigger: "blur" }
+            {required: true, message: '请输入用户名', trigger: 'blur'}
+            // { min: 5, message: "用户名长度大于等于 5 个字符", trigger: "blur" },
+            // { max: 20, message: "用户名长度不能大于 20 个字符", trigger: "blur" }
           ],
           nickName: [
             {required: true, message: '请输入昵称', trigger: 'blur'}

@@ -245,20 +245,9 @@
 
                 // 后端删除token
                 logout();
-
-              // deleteUserAccessToken(getCookie("token"));
+                // 前端删除token
                 delCookie("token");
-                let url = window.parent.location.href;
-                let haveToken = url.indexOf("?token")
-                if (haveToken != -1) {
-                    let list = url.split("?token");
-                    this.isLogin = false;
-                    window.location.href = list[0]
-                    let userInfo = {};
-                    this.SET_USER_INFO(userInfo)
-                } else {
-                    window.location.reload()
-                }
+                window.location.reload()
             },
             userLogin: function () {
                 this.showLogin = true;

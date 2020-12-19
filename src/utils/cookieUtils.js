@@ -64,9 +64,10 @@ export function getCookie(name) {
 }
 
 export function delCookie(name) {
-    var exp = new Date();
+    let exp = new Date();
     exp.setTime(exp.getTime() - 1);
-    var cval = getCookie(name);
-    if (cval != null)
-        document.cookie = name + "=" + cval + ";expires=" + exp.toUTCString();
+    let cval = getCookie(name);
+    if (cval != null){
+        document.cookie = name + "=" + cval + ";expires=" + exp.toUTCString()+";domain="+process.env.VUE_APP_DOMAIN;
+    }
 }
