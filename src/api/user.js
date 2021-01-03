@@ -86,7 +86,7 @@ export function localLogin(params) {
   return request({
     url: '/front/login',
     method: 'post',
-    data: params
+    params
   })
 }
 

@@ -236,11 +236,11 @@
             return;
           } else {
             var params = {};
-            params.name = this.loginForm.name;
+            params.username = this.loginForm.name;
             params.password = this.passwordEncryption(
                     this.loginForm.password + ',' + new Date().getTime()
             )
-            params.isRememberMe = 1;
+            // params.isRememberMe = 1;
             localLogin(params).then(response => {
               if (response.code == "20000") {
                 // 跳转到首页
