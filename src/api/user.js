@@ -141,3 +141,15 @@ export function getUserInfo(params) {
     params
   })
 }
+
+/**
+ * 手机号码登录
+ * @param params
+ */
+export function phoneLogin(params) {
+  return request({
+    url: '/front/phoneLogin',
+    method: 'post',
+    data: params
+  })
+}

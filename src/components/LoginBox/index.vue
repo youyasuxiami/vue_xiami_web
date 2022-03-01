@@ -5,9 +5,9 @@
         <span class="t1">
           登录
         </span>
-        <div class="t2" @click="closeLogin()">
-          X
-        </div>
+<!--        <div class="t2" @click="closeLogin()">-->
+<!--          X-->
+<!--        </div>-->
       </div>
       <el-divider></el-divider>
       <el-form :label-position="labelPosition" :rules="loginRules" :model="loginForm" ref="loginForm">
@@ -18,8 +18,8 @@
           <el-input type="password" v-model="loginForm.password" placeholder="请输入密码" :disabled="loginType.password"></el-input>
         </el-form-item>
         <el-row class="btn">
-          <el-button class="loginBtn" type="primary" @click="startLogin" :disabled="loginType.password">登录</el-button>
-          <el-button class="registerBtn" type="info" @click="goRegister" :disabled="loginType.password">注册</el-button>
+          <el-button class="loginBtn" type="primary" @click="startLogin" :disabled="loginType.password">账号密码登录</el-button>
+          <el-button class="registerBtn" type="info" @click="goRegister" :disabled="loginType.password">手机登录</el-button>
         </el-row>
 
         <el-row class="elRow">
@@ -61,7 +61,7 @@
     <div class="box registerBox" v-if="showLogin == false">
       <div class="title">
         <span class="t1">
-          注册
+          手机登录
         </span>
         <div class="t2" @click="closeLogin()">
           X
@@ -69,32 +69,32 @@
       </div>
       <el-divider></el-divider>
       <el-form :rules="rules" :label-position="labelPosition" :model="registerForm" ref="registerForm">
-        <el-form-item label="用户名" prop="name">
-          <el-input v-model="registerForm.name" placeholder="用户名长度在5~20之间" :disabled="loginType.password"></el-input>
+        <el-form-item label="手机号码" prop="phone">
+          <el-input v-model="registerForm.phone" placeholder="请输入手机号码" :disabled="loginType.phone"></el-input>
         </el-form-item>
 
-        <el-form-item label="昵称" prop="nickName">
-          <el-input v-model="registerForm.nickName" :disabled="loginType.password"></el-input>
+        <el-form-item label="验证码" prop="code1">
+          <el-input v-model="registerForm.code1" placeholder="请输入验证码" :disabled="loginType.code"></el-input>
         </el-form-item>
 
-        <el-form-item label="密码" prop="password">
-          <el-input type="password" v-model="registerForm.password" :disabled="loginType.password"></el-input>
-        </el-form-item>
+<!--        <el-form-item label="密码" prop="password">-->
+<!--          <el-input type="password" v-model="registerForm.password" :disabled="loginType.password"></el-input>-->
+<!--        </el-form-item>-->
 
-        <el-form-item label="重复密码" prop="password2">
-          <el-input type="password" v-model="registerForm.password2" :disabled="loginType.password"></el-input>
-        </el-form-item>
+<!--        <el-form-item label="重复密码" prop="password2">-->
+<!--          <el-input type="password" v-model="registerForm.password2" :disabled="loginType.password"></el-input>-->
+<!--        </el-form-item>-->
 
-        <el-form-item label="邮箱" prop="email">
-          <el-input v-model="registerForm.email" :disabled="loginType.password"></el-input>
-        </el-form-item>
+<!--        <el-form-item label="邮箱" prop="email">-->
+<!--          <el-input v-model="registerForm.email" :disabled="loginType.password"></el-input>-->
+<!--        </el-form-item>-->
 
         <el-row class="btn">
-          <el-button class="loginBtn" type="primary" @click="startRegister" :disabled="loginType.password">注册</el-button>
-          <el-button class="registerBtn" type="info" @click="goLogin" :disabled="loginType.password">返回登录</el-button>
+          <el-button class="loginBtn" type="primary" @click="startRegister" :disabled="loginType.password">点击登录</el-button>
+          <el-button class="registerBtn" type="info" @click="goLogin" :disabled="loginType.password">返回账号密码登录</el-button>
         </el-row>
 
-        <div class="loginTip">注册后，需要到邮箱进行邮件认证~</div>
+<!--        <div class="loginTip">注册后，需要到邮箱进行邮件认证~</div>-->
       </el-form>
     </div>
 
@@ -104,7 +104,7 @@
 </template>
 
 <script>
-  import {login, localLogin, localRegister} from "@/api/user";
+  import {login, localLogin, localRegister,phoneLogin} from "@/api/user";
   import { Loading } from 'element-ui';
   import { JSEncrypt } from 'jsencrypt'
   import { getPublicKey } from '@/api/user'
@@ -128,6 +128,8 @@
         dialog: false,
         loading: false,
         labelPosition: "right",
+        phone: "",
+        code1: "",
         loginForm: {
           name: "",
           password: ""
@@ -136,7 +138,9 @@
           name: "",
           password: "",
           password2: "",
-          email: ""
+          email: "",
+          phone: "",
+          code1: ""
         },
         // 登录类别
         loginType: {
@@ -144,7 +148,8 @@
           gitee: true,
           github: true,
           qq: true,
-          wechat: true
+          wechat: true,
+          code1:true
         },
         loginRules: {
           name: [
@@ -159,6 +164,27 @@
           ]
         },
         rules: {
+          phone: [
+            { required: true,message: '手机号码不能为空',},
+            {
+              type: 'number',
+              message: '手机号格式不正确',
+              trigger: 'blur',
+              transform(value) {
+                let phonereg = 11 && /^((13|14|15|16|17|18|19)[0-9]{1}\d{8})$/
+                if (!phonereg.test(value)) {
+                  return false
+                } else {
+                  return Number(value)
+                }
+              }
+            }
+          ],
+          code1: [
+            {required: true, message: '验证码不能为空', trigger: 'blur'}
+            // { min: 5, message: "用户名长度大于等于 5 个字符", trigger: "blur" },
+            // { max: 20, message: "用户名长度不能大于 20 个字符", trigger: "blur" }
+          ],
           name: [
             {required: true, message: '请输入用户名', trigger: 'blur'}
             // { min: 5, message: "用户名长度大于等于 5 个字符", trigger: "blur" },
@@ -260,29 +286,31 @@
         })
       },
       startRegister: function () {
-        this.$refs.registerForm.validate((valid) => {
-          if(!valid) {
-            console.log('校验失败')
-            return;
-          } else {
-            let password = this.registerForm.password;
-            let password2 = this.registerForm.password2;
-            if(password != password2) {
-              this.$message({
-                type: "success",
-                message: "两次密码不一致"
-              })
-              return;
-            }
+        // this.$refs.registerForm.validate((valid) => {
+        //   if(!valid) {
+        //     console.log('校验失败')
+        //     return;
+        //   } else {
+        //     let password = this.registerForm.password;
+        //     let password2 = this.registerForm.password2;
+        //     if(password != password2) {
+        //       this.$message({
+        //         type: "success",
+        //         message: "两次密码不一致"
+        //       })
+        //       return;
+        //     }
             var params = {};
-            params.name = this.registerForm.name;
-            // 加密
-            params.password = this.passwordEncryption(
-                    this.registerForm.password + ',' + new Date().getTime()
-            )
-            params.email = this.registerForm.email;
-            params.nickName = this.registerForm.nickName
-            localRegister(params).then(response => {
+            params.phone = this.registerForm.phone;
+            params.code1 = this.registerForm.code1;
+        //     // 加密
+        //     params.password = this.passwordEncryption(
+        //             this.registerForm.password + ',' + new Date().getTime()
+        //     )
+        //     params.email = this.registerForm.email;
+        //     params.nickName = this.registerForm.nickName
+        //     localRegister(params).then(response => {
+        phoneLogin(params).then(response => {
               if (response.code == "20000") {
                 this.$message({
                   type: "success",
@@ -293,12 +321,10 @@
               } else {
                 this.$message({
                   type: "error",
-                  message: response.data
+                  message: response.message
                 })
               }
             });
-          }
-        })
       },
       goLogin: function () {
         this.showLogin = true;
@@ -353,7 +379,7 @@
   }
 
   .registerBox {
-    height: 660px;
+    height: 400px;
   }
 
   .box .title {

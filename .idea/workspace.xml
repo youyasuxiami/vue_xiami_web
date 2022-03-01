@@ -25,20 +25,37 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17c216e3-1706-4aaf-bcb9-b759e92d2e4c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/message.js" afterDir="false" />
+    <list default="true" id="17c216e3-1706-4aaf-bcb9-b759e92d2e4c" name="Default Changelist" comment="解决了服务器上单点登录的问题,项目重构前">
+      <change afterPath="$PROJECT_DIR$/src/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shengri/2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vue-xiami-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vue-xiami-web.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/blogContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/blogContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CommentBox/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CommentBox/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CommentList/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CommentList/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/messageBoard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/messageBoard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginBox/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginBox/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -55,6 +72,9 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1gnh6QI5jUvz5pHEqfh6qHDIt4N" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -65,15 +85,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.5.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\86138\Desktop\vue模板\用vuecli3创建的vue博客项目\vue-xiami-web\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="settings.webpack" />
     <property name="ts.external.directory.path" value="F:\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -196,6 +221,31 @@
       <workItem from="1607574347188" duration="1333000" />
       <workItem from="1607581870503" duration="14211000" />
       <workItem from="1607694936382" duration="7886000" />
+      <workItem from="1607761688108" duration="151000" />
+      <workItem from="1607832481105" duration="9898000" />
+      <workItem from="1607952626011" duration="2549000" />
+      <workItem from="1608048492764" duration="587000" />
+      <workItem from="1608082517986" duration="289000" />
+      <workItem from="1608127472387" duration="38000" />
+      <workItem from="1608393392969" duration="4750000" />
+      <workItem from="1609215132746" duration="630000" />
+      <workItem from="1609333804058" duration="4000" />
+      <workItem from="1609682680727" duration="1091000" />
+      <workItem from="1613304842576" duration="2366000" />
+      <workItem from="1613368991336" duration="174000" />
+      <workItem from="1616896055657" duration="39000" />
+      <workItem from="1617195836369" duration="15000" />
+      <workItem from="1617628997813" duration="1659000" />
+      <workItem from="1617716202493" duration="718000" />
+      <workItem from="1622592450272" duration="599000" />
+      <workItem from="1625406996072" duration="488000" />
+      <workItem from="1625407615251" duration="2664000" />
+      <workItem from="1625443366713" duration="93000" />
+      <workItem from="1626881228524" duration="759000" />
+      <workItem from="1638451204790" duration="37000" />
+      <workItem from="1638451280879" duration="446000" />
+      <workItem from="1641470007350" duration="964000" />
+      <workItem from="1646133135966" duration="318000" />
     </task>
     <task id="LOCAL-00001" summary="搬砖完成">
       <created>1598778800753</created>
@@ -267,7 +317,28 @@
       <option name="project" value="LOCAL" />
       <updated>1607617933008</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="实现了留言板">
+      <created>1607761723897</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607761723897</updated>
+    </task>
+    <task id="LOCAL-00012" summary="解决了服务器上单点登录的问题,项目重构前">
+      <created>1608394230171</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1608394230171</updated>
+    </task>
+    <task id="LOCAL-00013" summary="修改了前端登录">
+      <created>1609683612272</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609683612272</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,72 +384,19 @@
     <MESSAGE value="1、实现了前后端的history模式，包括开发环境，生产环境" />
     <MESSAGE value="实现了归档管理" />
     <MESSAGE value="实现了分类、留言板、标签接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了分类、留言板、标签接口" />
+    <MESSAGE value="实现了留言板" />
+    <MESSAGE value="解决了服务器上单点登录的问题,项目重构前" />
+    <MESSAGE value="修改了前端登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改了前端登录" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="511" y="248" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1601516577533">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1638451238482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="511" y="248" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.824@0.0.1536.824" timestamp="1601516577533" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605800541708">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1638451238482" />
+    <state x="468" y="146" width="642" height="534" key="find.popup" timestamp="1641470082306">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605800541708" />
-    <state x="532" y="64" key="#sort.vue" timestamp="1607530993619">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="532" y="64" key="#sort.vue/0.0.1536.824@0.0.1536.824" timestamp="1607530993619" />
-    <state x="304" y="0" key="CommitChangelistDialog2" timestamp="1607617931328">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="304" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1607617931328" />
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1607615938634">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1607615938634" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1607241034281">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607241034281" />
-    <state width="1515" height="289" key="GridCell.Tab.0.bottom" timestamp="1606923416369">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="289" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606923416369" />
-    <state width="1515" height="289" key="GridCell.Tab.0.center" timestamp="1606923416369">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="289" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606923416369" />
-    <state width="1515" height="289" key="GridCell.Tab.0.left" timestamp="1606923416368">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="289" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606923416368" />
-    <state width="1515" height="289" key="GridCell.Tab.0.right" timestamp="1606923416369">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="289" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606923416369" />
-    <state x="270" y="56" width="996" height="709" key="SettingsEditor" timestamp="1607241035686">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="270" y="56" width="996" height="709" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607241035686" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1607609896965">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1607609896965" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1607617938757">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607617938757" />
-    <state x="355" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600001329598">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="355" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1600001329598" />
-    <state x="447" y="150" width="642" height="564" key="find.popup" timestamp="1607739262722">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="447" y="150" width="642" height="564" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607739262722" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607234588752">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607234588752" />
+    <state x="468" y="146" width="642" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1641470082306" />
   </component>
 </project>
